@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Natural Science 1 Reviewer - Cute Theme</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background: linear-gradient(to top right, #ffe6f0, #e6f7ff);
+      color: #333;
+      overflow-x: hidden;
+      position: relative;
+    }
+    h1, h2, h3 {
+      color:#ff3399;
+      text-shadow: 1px 1px #fff;
+    }
+    .card {
+      background: #fff;
+      padding:15px;
+      margin:15px 0;
+      border-radius:20px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      border: 2px dashed #ffb3d9;
+      position:relative;
+      z-index:2;
+    }
+    ul {margin-left:20px}
+    strong {color:#cc0066}
+
+    /* Floating stars */
+    .star {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: radial-gradient(circle, #fff6ff 40%, #ff99ff 70%, #ff33cc 100%);
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+      animation: twinkle 5s infinite ease-in-out;
+      opacity: 0.9;
+      box-shadow: 0 0 12px rgba(255, 102, 204, 0.9);
+      z-index: 1;
+    }
+    @keyframes twinkle {
+      0%,100% { transform: scale(0.7) rotate(0deg); opacity:0.6; }
+      50% { transform: scale(1.4) rotate(15deg); opacity:1; }
+    }
+
+    /* Cute floating icons */
+    .icon {
+      position: absolute;
+      font-size: 28px;
+      animation: floatUp 12s linear infinite;
+      opacity: 0.85;
+      z-index: 1;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateY(-120vh) scale(1.2); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Natural Science 1 Reviewer 🌸</h1>
+  <p><em>Key ideas and summaries from lecture notes.</em></p>
+
+  <div class="card">
+    <h2>Ecology</h2>
+    <ul>
+      <li><strong>Definition:</strong> Study of interactions between living organisms and their environment.</li>
+      <li><strong>Subdivisions:</strong>
+        <ul>
+          <li>Autecology → study of one species.</li>
+          <li>Synecology → study of communities of organisms.</li>
+        </ul>
+      </li>
+      <li><strong>Ecosystem:</strong> Interactions between organisms and physical environment.</li>
+      <li><strong>Symbiosis:</strong>
+        <ul>
+          <li>Mutualism → both benefit.</li>
+          <li>Commensalism → one benefits, other unaffected.</li>
+          <li>Parasitism → one benefits, one harmed.</li>
+          <li>Predation → predator vs prey.</li>
+        </ul>
+      </li>
+      <li><strong>Factors:</strong>
+        <ul>
+          <li>Abiotic → light, temperature, water, soil.</li>
+          <li>Biotic → plants, animals, microbes.</li>
+          <li>Limiting factors control population size.</li>
+        </ul>
+      </li>
+      <li><strong>Levels of Organization:</strong> Individual → Population → Community → Ecosystem → Biosphere.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Environmental Engineering</h2>
+    <ul>
+      <li>Applies science & math to solve sanitation and environmental problems.</li>
+      <li><strong>Sanitary Works:</strong>
+        <ol>
+          <li>Safe and ample water supply.</li>
+          <li>Wastewater and solid waste disposal/recycling.</li>
+          <li>Drainage of rural & urban areas.</li>
+          <li>Control of pollution (water, soil, air).</li>
+          <li>Social & environmental impact assessment.</li>
+        </ol>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Environmental Ethics 🌍</h2>
+    <ul>
+      <li>Humans share Earth with all life → we must protect it.</li>
+      <li><strong>Code of Ethics:</strong>
+        <ol>
+          <li>Enhance & protect environment.</li>
+          <li>Prioritize health, safety, and welfare.</li>
+          <li>Work within expertise.</li>
+          <li>Be honest and impartial.</li>
+          <li>Be truthful in public statements.</li>
+        </ol>
+      </li>
+      <li><strong>Environmental Systems:</strong>
+        <ul>
+          <li>Water Resource Management.</li>
+          <li>Wastewater Disposal.</li>
+          <li>Air Resource Management.</li>
+          <li>Solid Waste Management.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Environmental Laws (Philippines) 📜</h2>
+    <ul>
+      <li><strong>PD 1568:</strong> Environmental Impact Statements required.</li>
+      <li><strong>RA 8749:</strong> Clean Air Act (1999).</li>
+      <li><strong>RA 9275:</strong> Clean Water Act (2004).</li>
+      <li><strong>RA 6969:</strong> Toxic Substances & Hazardous Waste Act.</li>
+      <li><strong>RA 9003:</strong> Solid Waste Management Act (2000).</li>
+      <li><strong>RA 9729:</strong> Climate Change Act (2009).</li>
+      <li><strong>RA 9512:</strong> Environmental Awareness & Education Act (2008).</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p><em>Tip: Focus on ecosystem interactions, ethics, and major Philippine environmental laws. Use mnemonics to recall RA numbers easily! ✨</em></p>
+  </footer>
+
+  <!-- Floating stars and cute icons -->
+  <script>
+    function createStar() {
+      const star = document.createElement("div");
+      star.classList.add("star");
+      star.style.left = Math.random() * window.innerWidth + "px";
+      star.style.top = Math.random() * window.innerHeight + "px";
+      star.style.animationDuration = 3 + Math.random() * 4 + "s";
+      document.body.appendChild(star);
+
+      setTimeout(() => {
+        star.remove();
+      }, 9000);
+    }
+    setInterval(createStar, 600);
+
+    // Floating cute icons (flowers, hearts, animals)
+    const icons = ["🌸","💖","🐰","🐥","🌼","🦋"];
+    function createIcon() {
+      const icon = document.createElement("div");
+      icon.classList.add("icon");
+      icon.textContent = icons[Math.floor(Math.random()*icons.length)];
+      icon.style.left = Math.random() * window.innerWidth + "px";
+      icon.style.bottom = "-40px";
+      icon.style.animationDuration = 8 + Math.random()*6 + "s";
+      document.body.appendChild(icon);
+
+      setTimeout(() => {
+        icon.remove();
+      }, 15000);
+    }
+    setInterval(createIcon, 1200);
+  </script>
+</body>
+</html>
