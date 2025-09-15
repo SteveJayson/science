@@ -1,52 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Natural Science 1 Reviewer - Cute Theme (Protected)</title>
   <style>
     :root{--overlay-bg: rgba(2,6,23,0.85)}
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
-      margin: 0; /* reset so overlay covers full viewport */
+      margin: 0;
       background: linear-gradient(to top right, #ffe6f0, #e6f7ff);
       color: #333;
       overflow-x: hidden;
       position: relative;
       min-height:100vh;
     }
-
     .page-wrap{padding:20px;}
-
-    h1, h2, h3 {
-      color:#ff3399;
-      text-shadow: 1px 1px #fff;
+    h1,h2,h3{ color:#ff3399; text-shadow:1px 1px #fff; }
+    .card{
+      background:#fff; padding:15px; margin:15px 0;
+      border-radius:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      border:2px dashed #ffb3d9; position:relative; z-index:2;
     }
-    .card {
-      background: #fff;
-      padding:15px;
-      margin:15px 0;
-      border-radius:20px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.1);
-      border: 2px dashed #ffb3d9;
-      position:relative;
-      z-index:2;
-    }
-    ul {margin-left:20px}
-    strong {color:#cc0066}
+    ul{margin-left:20px}
+    strong{color:#cc0066}
 
     /* Floating stars */
-    .star {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: radial-gradient(circle, #fff6ff 40%, #ff99ff 70%, #ff33cc 100%);
-      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-      animation: twinkle 5s infinite ease-in-out;
-      opacity: 0.9;
-      box-shadow: 0 0 12px rgba(255, 102, 204, 0.9);
-      z-index: 1;
+    .star{
+      position:absolute; width:20px; height:20px;
+      background: radial-gradient(circle,#fff6ff 40%,#ff99ff 70%,#ff33cc 100%);
+      clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+      animation: twinkle 5s infinite ease-in-out; opacity:0.9;
+      box-shadow: 0 0 12px rgba(255,102,204,0.9); z-index:1;
     }
     @keyframes twinkle {
       0%,100% { transform: scale(0.7) rotate(0deg); opacity:0.6; }
@@ -54,35 +40,25 @@
     }
 
     /* Cute floating icons */
-    .icon {
-      position: absolute;
-      font-size: 28px;
-      animation: floatUp 12s linear infinite;
-      opacity: 0.85;
-      z-index: 1;
-    }
+    .icon { position:absolute; font-size:28px; animation: floatUp 12s linear infinite; opacity:0.85; z-index:1; }
     @keyframes floatUp {
-      0% { transform: translateY(0) scale(1); opacity: 0; }
-      10% { opacity: 1; }
-      100% { transform: translateY(-120vh) scale(1.2); opacity: 0; }
+      0% { transform: translateY(0) scale(1); opacity:0; }
+      10% { opacity:1; }
+      100% { transform: translateY(-120vh) scale(1.2); opacity:0; }
     }
 
     /* Login overlay */
-    .overlay {
-      position: fixed; inset:0; display:flex; align-items:center; justify-content:center;
-      background: var(--overlay-bg); z-index:9999; padding:20px;
-    }
+    .overlay { position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:var(--overlay-bg); z-index:9999; padding:20px; }
     .login-card{
-      background: linear-gradient(180deg,#fff,#ffeef8); border-radius:14px; padding:22px; width:320px; box-shadow:0 10px 30px rgba(0,0,0,0.4); text-align:center;
+      background: linear-gradient(180deg,#fff,#ffeef8);
+      border-radius:14px; padding:22px; width:320px; box-shadow:0 10px 30px rgba(0,0,0,0.4); text-align:center;
     }
-    .login-card h2{margin:0 0 12px;color:#c2185b}
-    .login-card input{width:100%;padding:10px;border-radius:10px;border:1px solid #ffd6ea;margin:8px 0}
-    .btn{display:inline-block;padding:10px 14px;border-radius:10px;border:0;background:#ff66a3;color:#fff;font-weight:700;cursor:pointer}
-    .msg{color:#880e4f;margin-top:8px;font-size:14px}
-    .logout{position:fixed; right:16px; top:16px; z-index:1000}
-
-    /* Hide content when locked (for extra guarantee) */
-    .locked .page-wrap{filter: blur(3px); pointer-events:none; user-select:none}
+    .login-card h2{ margin:0 0 12px; color:#c2185b; }
+    .login-card input{ width:100%; padding:10px; border-radius:10px; border:1px solid #ffd6ea; margin:8px 0; }
+    .btn{ display:inline-block; padding:10px 14px; border-radius:10px; border:0; background:#ff66a3; color:#fff; font-weight:700; cursor:pointer; }
+    .msg{ color:#880e4f; margin-top:8px; font-size:14px; min-height:18px; }
+    .logout{ position:fixed; right:16px; top:16px; z-index:1000; }
+    .locked .page-wrap{ filter: blur(3px); pointer-events:none; user-select:none; }
   </style>
 </head>
 <body>
@@ -95,7 +71,7 @@
       <input id="username" placeholder="Username" autocomplete="username" />
       <input id="password" type="password" placeholder="Password" autocomplete="current-password" />
       <div style="display:flex;gap:8px;margin-top:8px;justify-content:center">
-        <button id="loginBtn" class="btn">Sign in</button>
+        <button id="loginBtn" class="btn" type="button">Sign in</button>
       </div>
       <div id="feedback" class="msg" aria-live="polite"></div>
     </div>
@@ -103,7 +79,7 @@
 
   <!-- Logout button (hidden until authenticated) -->
   <div id="logoutWrap" class="logout" style="display:none">
-    <button id="logoutBtn" class="btn" style="background:#9e2f5d">Log out</button>
+    <button id="logoutBtn" class="btn" style="background:#9e2f5d" type="button">Log out</button>
   </div>
 
   <!-- Main content -->
@@ -115,166 +91,185 @@
       <h2>Ecology</h2>
       <ul>
         <li><strong>Definition:</strong> Study of interactions between living organisms and their environment.</li>
-        <li><strong>Subdivisions:</strong>
-          <ul>
-            <li>Autecology → study of one species.</li>
-            <li>Synecology → study of communities of organisms.</li>
-          </ul>
-        </li>
-        <li><strong>Ecosystem:</strong> Interactions between organisms and physical environment.</li>
-        <li><strong>Symbiosis:</strong>
-          <ul>
-            <li>Mutualism → both benefit.</li>
-            <li>Commensalism → one benefits, other unaffected.</li>
-            <li>Parasitism → one benefits, one harmed.</li>
-            <li>Predation → predator vs prey.</li>
-          </ul>
-        </li>
-        <li><strong>Factors:</strong>
-          <ul>
-            <li>Abiotic → light, temperature, water, soil.</li>
-            <li>Biotic → plants, animals, microbes.</li>
-            <li>Limiting factors control population size.</li>
-          </ul>
-        </li>
+        <li><strong>Subdivisions:</strong> Autecology (one species), Synecology (communities).</li>
+        <li><strong>Ecosystem:</strong> Organisms + physical environment.</li>
+        <li><strong>Symbiosis:</strong> Mutualism, Commensalism, Parasitism, Predation.</li>
+        <li><strong>Factors:</strong> Abiotic (light, temp, soil) & Biotic (plants, animals, microbes).</li>
         <li><strong>Levels of Organization:</strong> Individual → Population → Community → Ecosystem → Biosphere.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Pollution & Sanitation 🚯</h2>
+      <ul>
+        <li><strong>Air Pollution:</strong> From vehicles, industries, burning → respiratory diseases.</li>
+        <li><strong>Water Pollution:</strong> From sewage, chemicals → unsafe drinking water.</li>
+        <li><strong>Soil Pollution:</strong> From waste dumping, pesticides → loss of fertility.</li>
+        <li><strong>Control:</strong> Proper sanitation, waste segregation, pollution control technologies.</li>
       </ul>
     </div>
 
     <div class="card">
       <h2>Environmental Engineering</h2>
       <ul>
-        <li>Applies science & math to solve sanitation and environmental problems.</li>
-        <li><strong>Sanitary Works:</strong>
-          <ol>
-            <li>Safe and ample water supply.</li>
-            <li>Wastewater and solid waste disposal/recycling.</li>
-            <li>Drainage of rural & urban areas.</li>
-            <li>Control of pollution (water, soil, air).</li>
-            <li>Social & environmental impact assessment.</li>
-          </ol>
-        </li>
+        <li>Application of science & math to solve sanitation and environmental problems.</li>
+        <li><strong>Sanitary Works:</strong> Water supply, waste disposal, drainage, pollution control, impact assessment.</li>
       </ul>
     </div>
 
     <div class="card">
       <h2>Environmental Ethics 🌍</h2>
       <ul>
-        <li>Humans share Earth with all life → we must protect it.</li>
-        <li><strong>Code of Ethics:</strong>
-          <ol>
-            <li>Enhance & protect environment.</li>
-            <li>Prioritize health, safety, and welfare.</li>
-            <li>Work within expertise.</li>
-            <li>Be honest and impartial.</li>
-            <li>Be truthful in public statements.</li>
-          </ol>
-        </li>
-        <li><strong>Environmental Systems:</strong>
-          <ul>
-            <li>Water Resource Management.</li>
-            <li>Wastewater Disposal.</li>
-            <li>Air Resource Management.</li>
-            <li>Solid Waste Management.</li>
-          </ul>
-        </li>
+        <li><strong>Principle:</strong> Humans share Earth with other life, so we must protect it.</li>
+        <li><strong>Code of Ethics:</strong> Protect environment, prioritize safety, honesty, impartiality.</li>
+        <li><strong>Systems:</strong> Water, Wastewater, Air, Solid Waste management.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Climate Change & Global Warming 🌡️</h2>
+      <ul>
+        <li><strong>Causes:</strong> Burning fossil fuels → CO₂, methane, greenhouse gases.</li>
+        <li><strong>Impacts:</strong> Rising sea levels, stronger typhoons, droughts, biodiversity loss.</li>
+        <li><strong>Mitigation:</strong> Renewable energy, conservation, reforestation, international agreements.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Population & Carrying Capacity 👥</h2>
+      <ul>
+        <li><strong>Population Growth:</strong> Increases demand for food, water, energy.</li>
+        <li><strong>Carrying Capacity:</strong> Maximum population environment can sustain.</li>
+        <li><strong>Problems:</strong> Overpopulation → shortages, pollution, poverty.</li>
+        <li><strong>Solutions:</strong> Family planning, sustainable resource use.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Energy Resources ⚡</h2>
+      <ul>
+        <li><strong>Non-renewable:</strong> Coal, oil, natural gas (finite, polluting).</li>
+        <li><strong>Renewable:</strong> Solar, wind, hydro, geothermal, biomass.</li>
+        <li><strong>Conservation:</strong> Efficiency, reduced consumption, sustainable tech.</li>
       </ul>
     </div>
 
     <div class="card">
       <h2>Environmental Laws (Philippines) 📜</h2>
       <ul>
-        <li><strong>PD 1568:</strong> Environmental Impact Statements required.</li>
-        <li><strong>RA 8749:</strong> Clean Air Act (1999).</li>
-        <li><strong>RA 9275:</strong> Clean Water Act (2004).</li>
-        <li><strong>RA 6969:</strong> Toxic Substances & Hazardous Waste Act.</li>
-        <li><strong>RA 9003:</strong> Solid Waste Management Act (2000).</li>
-        <li><strong>RA 9729:</strong> Climate Change Act (2009).</li>
-        <li><strong>RA 9512:</strong> Environmental Awareness & Education Act (2008).</li>
+        <li>PD 1568: Environmental Impact Statements required.</li>
+        <li>RA 8749: Clean Air Act (1999).</li>
+        <li>RA 9275: Clean Water Act (2004).</li>
+        <li>RA 6969: Toxic Substances & Hazardous Waste Act.</li>
+        <li>RA 9003: Solid Waste Management Act (2000).</li>
+        <li>RA 9729: Climate Change Act (2009).</li>
+        <li>RA 9512: Environmental Awareness & Education Act (2008).</li>
       </ul>
     </div>
 
     <footer>
-      <p><em>Tip: Focus on ecosystem interactions, ethics, and major Philippine environmental laws. Use mnemonics to recall RA numbers easily! ✨</em></p>
+      <p><em>Tip: Focus on ecosystems, pollution, climate change, population, energy, and Philippine laws. These are high-yield topics! ✨</em></p>
     </footer>
   </div>
 
-  <!-- Floating stars and cute icons -->
+  <!-- Scripts (safe and readable) -->
   <script>
-    // Access control -- client-side only (not cryptographically secure)
-    const AUTH_KEY = 'ns_reviewer_authenticated_v1';
-    const VALID_USER = 'sai';
-    const VALID_PASS = 'sai';
+    document.addEventListener('DOMContentLoaded', () => {
+      const AUTH_KEY = 'ns_reviewer_authenticated_v1';
+      const VALID_USER = 'sai';
+      const VALID_PASS = 'sai';
 
-    const overlay = document.getElementById('overlay');
-    const feedback = document.getElementById('feedback');
-    const loginBtn = document.getElementById('loginBtn');
-    const logoutBtn = document.getElementById('logoutBtn');
-    const logoutWrap = document.getElementById('logoutWrap');
-    const main = document.getElementById('main');
+      const overlay = document.getElementById('overlay');
+      const feedback = document.getElementById('feedback');
+      const loginBtn = document.getElementById('loginBtn');
+      const logoutBtn = document.getElementById('logoutBtn');
+      const logoutWrap = document.getElementById('logoutWrap');
+      const main = document.getElementById('main');
+      const usernameInput = document.getElementById('username');
+      const passwordInput = document.getElementById('password');
 
-    function isAuthenticated(){ return sessionStorage.getItem(AUTH_KEY) === '1' }
+      function isAuthenticated() {
+        return sessionStorage.getItem(AUTH_KEY) === '1';
+      }
 
-    function showOverlay(show){
-      overlay.style.display = show ? 'flex' : 'none';
-      document.body.classList.toggle('locked', show);
-    }
+      function showOverlay(show) {
+        overlay.style.display = show ? 'flex' : 'none';
+        overlay.setAttribute('aria-hidden', show ? 'false' : 'true');
+        document.body.classList.toggle('locked', show);
+      }
 
-    // initialize
-    if(isAuthenticated()){
-      showOverlay(false);
-      logoutWrap.style.display = 'block';
-    } else {
-      showOverlay(true);
-      logoutWrap.style.display = 'none';
-    }
-
-    loginBtn.addEventListener('click', ()=>{
-      const u = document.getElementById('username').value.trim();
-      const p = document.getElementById('password').value;
-      if(u === VALID_USER && p === VALID_PASS){
-        sessionStorage.setItem(AUTH_KEY,'1');
+      function setAuthenticated() {
+        sessionStorage.setItem(AUTH_KEY, '1');
         feedback.textContent = 'Login successful!';
         showOverlay(false);
         logoutWrap.style.display = 'block';
-      } else {
-        feedback.textContent = 'Invalid username or password.';
-        setTimeout(()=> feedback.textContent = '', 3000);
       }
+
+      function clearAuth() {
+        sessionStorage.removeItem(AUTH_KEY);
+        showOverlay(true);
+        logoutWrap.style.display = 'none';
+      }
+
+      function attemptLogin() {
+        const u = usernameInput.value.trim();
+        const p = passwordInput.value;
+        if (u === VALID_USER && p === VALID_PASS) {
+          setAuthenticated();
+        } else {
+          feedback.textContent = 'Invalid username or password.';
+          setTimeout(() => { feedback.textContent = ''; }, 3000);
+        }
+      }
+
+      // init
+      if (isAuthenticated()) {
+        showOverlay(false);
+        logoutWrap.style.display = 'block';
+      } else {
+        showOverlay(true);
+        logoutWrap.style.display = 'none';
+        usernameInput.focus();
+      }
+
+      // events (guarded against null)
+      if (loginBtn) {
+        loginBtn.addEventListener('click', attemptLogin);
+      }
+      if (passwordInput) {
+        passwordInput.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') attemptLogin();
+        });
+      }
+      if (logoutBtn) {
+        logoutBtn.addEventListener('click', clearAuth);
+      }
+
+      // visual decorations (stars & icons)
+      function createStar() {
+        const s = document.createElement('div');
+        s.className = 'star';
+        s.style.left = Math.random() * window.innerWidth + 'px';
+        s.style.top = Math.random() * window.innerHeight + 'px';
+        s.style.animationDuration = 3 + Math.random() * 4 + 's';
+        document.body.appendChild(s);
+        setTimeout(() => s.remove(), 9000);
+      }
+      setInterval(createStar, 600);
+
+      const icons = ['🌼','💖','🐰','🐥','🌼','🦋'];
+      function createIcon() {
+        const i = document.createElement('div');
+        i.className = 'icon';
+        i.textContent = icons[Math.floor(Math.random() * icons.length)];
+        i.style.left = Math.random() * window.innerWidth + 'px';
+        i.style.bottom = '-40px';
+        i.style.animationDuration = 8 + Math.random() * 6 + 's';
+        document.body.appendChild(i);
+        setTimeout(() => i.remove(), 15000);
+      }
+      setInterval(createIcon, 1200);
     });
-
-    logoutBtn && logoutBtn.addEventListener('click', ()=>{
-      sessionStorage.removeItem(AUTH_KEY);
-      showOverlay(true);
-      logoutWrap.style.display = 'none';
-    });
-
-    // visual decorations (stars & icons)
-    function createStar() {
-      const star = document.createElement("div");
-      star.classList.add("star");
-      star.style.left = Math.random() * window.innerWidth + "px";
-      star.style.top = Math.random() * window.innerHeight + "px";
-      star.style.animationDuration = 3 + Math.random() * 4 + "s";
-      document.body.appendChild(star);
-
-      setTimeout(() => { star.remove(); }, 9000);
-    }
-    setInterval(createStar, 600);
-
-    const icons = ["🌸","💖","🐰","🐥","🌼","🦋"];
-    function createIcon() {
-      const icon = document.createElement("div");
-      icon.classList.add("icon");
-      icon.textContent = icons[Math.floor(Math.random()*icons.length)];
-      icon.style.left = Math.random() * window.innerWidth + "px";
-      icon.style.bottom = "-40px";
-      icon.style.animationDuration = 8 + Math.random()*6 + "s";
-      document.body.appendChild(icon);
-
-      setTimeout(() => { icon.remove(); }, 15000);
-    }
-    setInterval(createIcon, 1200);
   </script>
 </body>
 </html>
